@@ -4,9 +4,15 @@ on:
     branches:
       - main
       - dev
+env:
+  MONGODB_DB_NAME: gh-demo
 jobs:
   test:
-    environment: testing
+    env: 
+      MONGODB_CLUSTER_ADDRESS: cluster0.hyjiatj.mongodb.net
+      MONGODB_USERNAME: imamth
+      MONGODB_PASSWORD: mYMDPEix0aH9v8tB
+      PORT: 3000
     runs-on: ubuntu-latest
     steps:
       - name: Get Code
